@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ReactComponent as Logo } from "../../assets/books.svg";
+import { ReactComponent as Logo } from "../../assets/original.svg";
 import "./header.styles.scss";
 
-const Header = () => {
+const Header = () => (
 	<div className="header">
 		<Link to="/" className="logo-container">
 			<Logo className="logo" />
@@ -12,11 +12,11 @@ const Header = () => {
 			<Link className="option" to="/shop">
 				Shop
 			</Link>
-			<Link className="option" to="/shop">
+			<Link className="option" to="/contact">
 				Contact
 			</Link>
 		</div>
-	</div>;
-};
+	</div>
+);
 
 export default Header;
