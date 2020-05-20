@@ -1,6 +1,7 @@
 body {
-	font-family: "Open Sans Condensed";
+	font-family: -apple-system, Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;;
 	padding: 20px 60px;
+	background-color:rgb(252,252,251) ;
 }
 
 a {

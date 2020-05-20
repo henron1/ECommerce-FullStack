@@ -1,0 +1,25 @@
+.custom-button {
+    min-width: 165px;
+    width: auto;
+    height: 50px;
+    letter-spacing: 0.5px;
+    line-height: 50px;
+    padding: 0 35px 0 35px;
+    font-size: 15px;
+    background-color: rgb(249,238,230);
+    color: black;
+    text-transform: uppercase;
+    font-family: -apple-system, Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-weight: bolder;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  
+    &:hover {
+      background-color:rgb(252,252,250) ;
+      color: black;
+      border: 1px solid lightgrey;
+      border-radius: 5px
+    }
+  }
+  
