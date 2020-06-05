@@ -22,10 +22,24 @@ class App extends React.Component {
 
 	componentDidMount() {
 		//subscriber to persist user session
-		this.unsubscribeFromAuth = auth.onAuthStateChanged(async (user) => {
+		this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
 			// this.setState({ currentUser: user });
-			createUserProfileDocument(user);
-			console.log(user);
+			// createUserProfileDocument(user);
+			if (userAuth) {
+				const userReference = await createUserProfileDocument(userAuth);
+				// returns snapshot object moment of data related to user that we JUST stored or was already in db
+				userReference.onSnapshot((snapshot) => {
+					this.setState({
+						currentUser: {
+							id: snapshot.id,
+							...snapshot.data(),
+						},
+					});
+				});
+			} else {
+				// on logout it sets to null object we get back from the auth library
+				this.setState({ currentUser: userAuth });
+			}
 		});
 	}
 
