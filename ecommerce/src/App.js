@@ -6,7 +6,7 @@ import HomePage from "./pages/homepage/homepage.component";
 import ShopPage from "./pages/shop/shop.component";
 import Auth from "./pages/auth/auth.component";
 import Header from "./components/header/header.component";
-import { auth } from "./firebase/firebase.utils";
+import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
 class App extends React.Component {
 	constructor() {
@@ -22,8 +22,10 @@ class App extends React.Component {
 
 	componentDidMount() {
 		//subscriber to persist user session
-		this.unsubscribeFromAuth = auth.onAuthStateChanged((user) => {
-			this.setState({ currentUser: user });
+		this.unsubscribeFromAuth = auth.onAuthStateChanged(async (user) => {
+			// this.setState({ currentUser: user });
+			createUserProfileDocument(user);
+			console.log(user);
 		});
 	}
 
